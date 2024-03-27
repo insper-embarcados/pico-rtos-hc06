@@ -17,6 +17,12 @@
 #define HC06_RX_PIN 5
 #define HC06_PIN 6
 
+bool hc06_check_connection();
+bool hc06_set_name(char name[]);
+bool hc06_set_pin(char pin[]);
+bool hc06_set_at_mode(int on);
+bool hc06_init(char name[], char pin[]);
+
 bool hc06_check_connection() {
     char str[32];
     int i = 0;
@@ -67,11 +73,11 @@ bool hc06_set_pin(char pin[]) {
 }
 
 bool hc06_set_at_mode(int on){
-    gpio_set(HC06_PIN, on);
+    gpio_put(HC06_PIN, on);
 }
 
-bool hc06_init(char name, char pin) {
-    hc_06_set_at_mode(1);
+bool hc06_init(char name[], char pin[]) {
+    hc06_set_at_mode(1);
     printf("check connection\n");
     while (hc06_check_connection() == false) {
         printf("not connected\n");
@@ -86,16 +92,15 @@ bool hc06_init(char name, char pin) {
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
     printf("name ok\n");
-    hc_06_set_at_mode(0);
 
     vTaskDelay(pdMS_TO_TICKS(1000));
     printf("set pin\n");
-    while (hc06_set_name(pin) == false) {
+    while (hc06_set_pin(pin) == false) {
         printf("set pin failed\n");
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
     printf("pin ok\n");
-    hc_06_set_at_mode(0);
+    hc06_set_at_mode(0);
 }
 
 void hc06_task(void *p) {
