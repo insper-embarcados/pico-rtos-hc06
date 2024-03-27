@@ -19,7 +19,6 @@ void hc06_task(void *p) {
     gpio_set_function(HC06_RX_PIN, GPIO_FUNC_UART);
     hc06_init("aps2_legal", "1234");
 
-    int i = 0;
     while (true) {
         uart_puts(HC06_UART_ID, "OLAAA ");
         vTaskDelay(pdMS_TO_TICKS(100));
