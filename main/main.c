@@ -20,7 +20,7 @@ void hc06_task(void *p) {
     hc06_init("aps2_legal", "1234");
 
     while (true) {
-        uart_puts(HC06_UART_ID, "OLAAA");
+        uart_puts(HC06_UART_ID, "OLAAA ");
         vTaskDelay(pdMS_TO_TICKS(100));
     }
 }
