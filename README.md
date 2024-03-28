@@ -1,4 +1,4 @@
-# HC-06 exemplo
+# HC-06 Exemplo
 
 Manual: https://www.olimex.com/Products/Components/RF/BLUETOOTH-SERIAL-HC-06/resources/hc06.pdf
 
