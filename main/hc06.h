@@ -18,11 +18,11 @@
 #define HC06_PIN 6
 
 bool hc06_check_connection();
-char hc_05_06_check_version();
+char* hc_05_06_check_version();
 bool hc06_set_name(char name[]);
 bool hc06_set_pin(char pin[]);
 bool hc06_set_at_mode(int on);
-bool hc06_init(char name[], char pin[]);
+bool hc_05_06_init(char name[], char pin[]);
 
 
 #endif // HC06_H_
