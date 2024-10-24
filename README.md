@@ -2,7 +2,16 @@
 
 Manual: https://www.olimex.com/Products/Components/RF/BLUETOOTH-SERIAL-HC-06/resources/hc06.pdf
 
-Conectar HC-06 no 5V e gnd, pino TX no `GP5` e pino RX no `GP4`. Também é necessário conectar o pino `STATE` do bluetooth no pino `GP3`.
+Fazer as seguintes conexões:
+
+HC-06 no 5V e gnd, pino TX no `GP5` e pino RX no `GP4`. Também é necessário conectar o pino `STATE` do bluetooth no pino `GP3`.
+
+| HC-06  | Pico W |
+| ------------- | ------------- |
+| RXD  | GP4 (TX1)  |
+| TXD  | GP5 (RX1) |
+| GND  | GND  |
+| VCC  | 5V  |
 
 O projeto está organizado da seguinte maneira:
 
