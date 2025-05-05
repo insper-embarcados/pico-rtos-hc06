@@ -17,7 +17,7 @@ void hc06_task(void *p) {
     uart_init(HC06_UART_ID, HC06_BAUD_RATE);
     gpio_set_function(HC06_TX_PIN, GPIO_FUNC_UART);
     gpio_set_function(HC06_RX_PIN, GPIO_FUNC_UART);
-    hc06_init("aps2_legal", "1234");
+    hc06_config("aps2_legal", "1234"); //Remover essa função após a primeira configuração
 
     while (true) {
         uart_puts(HC06_UART_ID, "OLAAA ");
